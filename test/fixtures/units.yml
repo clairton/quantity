@@ -1,0 +1,29 @@
+km:
+  name: Kilometros
+  symbol: KM
+  position: after
+  type: distancia
+
+hr:
+  name: Horas
+  symbol: HR
+  position: after
+  type: tempo
+
+kg:
+  name: Kilogramas
+  symbol: KG
+  position: after
+  type: massa
+
+º:
+  name: Graus Celsius
+  symbol: º
+  position: after
+  type: temperatura
+
+R$:
+  name: Reais
+  symbol: R$
+  position: before
+  type: monetario
