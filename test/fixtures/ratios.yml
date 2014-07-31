@@ -6,19 +6,19 @@ mn_to_hr:
 mt_to_km:
   origin: mt
   detiny: km
-  value: x / 1000
+  formula: x / 1000
 
 km_to_mi:
   origin: km
   detiny: mi
-  value: x / 1.609344
+  formula: x / 1.609344
 
 real_to_dolar:
   origin: real
   detiny: dolar
-  value: x / 2.89
+  formula: x / 2.89
 
 celsius_to_fahrenheit:
   origin: celcius
   destiny: fahrenheit
-  value: (x - 32) / 1.8000
+  formula: (x - 32) / 1.8000
