@@ -15,3 +15,9 @@ velocidade:
 
 monetario:
   name: Monetário
+
+volume:
+  name: Volume
+
+unidade:
+  name: Unidade

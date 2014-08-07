@@ -28,11 +28,29 @@ mn:
   position: after
   type: tempo
 
+sg:
+  name: Segundo
+  symbol: sg
+  position: after
+  type: tempo
+
 kg:
   name: Kilograma
   symbol: kg
   position: after
   type: massa
+
+lt:
+  name: Litro
+  symbol: lt
+  position: after
+  type: volume
+
+ml:
+  name: Mililitro
+  symbol: ml
+  position: after
+  type: volume
 
 celsius:
   name: Celsius
@@ -43,6 +61,7 @@ celsius:
 fahrenheit:
   name: Fahrenheit
   symbol: ºF
+  position: after
   type: temperatura
 
 real:
@@ -56,3 +75,15 @@ dolar:
   symbol: $
   position: before
   type: monetario
+
+dz:
+  name: Duzia
+  symbol: dz
+  position: after
+  type: unidade
+
+un:
+  name: Unidade
+  symbol: un
+  position: after
+  type: unidade

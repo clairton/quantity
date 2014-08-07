@@ -1,0 +1,7 @@
+moeda:
+  amount: 9.99
+  unit: reais
+
+quantidade:
+  amount: 1000
+  unit: dz

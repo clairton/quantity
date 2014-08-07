@@ -1,6 +1,6 @@
-class CreateRatios < ActiveRecord::Migration
+class CreateQuantityRatios < ActiveRecord::Migration
   def change
-    create_table :ratios do |t|
+    create_table :quantity_ratios do |t|
       t.integer :origin_id, null: false, index: true
       t.integer :destiny_id, null: false, index: true
       t.string :formula, null: false, index: true
