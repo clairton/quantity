@@ -21,6 +21,13 @@ module Quantity
     end
 
     test 'presence of position' do
+      unit = Unit.new(name: 'Milisegundos', symbol: 'Mn', type: Type.first)
+      unit.position= nil
+      assert unit.invalid?
+      assert unit.errors.has_key? :position
+    end
+
+    test 'inclusion in position' do
       unit = Unit.new(name: 'Milisegundos', symbol: 'Mn', type: Type.first, position: :between)
       assert unit.invalid?
       assert unit.errors.has_key? :position

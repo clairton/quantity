@@ -7,7 +7,7 @@ module Quantity
 
     validates :name, :symbol, presence: true, uniqueness: true
     validates :type, presence: true
-    validates :position, inclusion: {in: [:after, :before]}
+    validates :position, inclusion: {in: [:after, :before]}, presence: true
 
     after_initialize :default_values
 
