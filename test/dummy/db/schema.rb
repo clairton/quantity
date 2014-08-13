@@ -11,13 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140807145147) do
+ActiveRecord::Schema.define(version: 20140802134439) do
 
-  create_table "items", force: true do |t|
-    t.string   "name",       null: false
-    t.integer  "unit_id",    null: false
+  create_table "quantity_ratios", force: true do |t|
+    t.integer  "origin_id",                 null: false
+    t.integer  "destiny_id",                null: false
+    t.string   "formula",                   null: false
+    t.boolean  "enable",     default: true, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "quantity_types", force: true do |t|
+    t.string "name", null: false
+  end
+
+  create_table "quantity_units", force: true do |t|
+    t.string  "symbol",   null: false
+    t.string  "name",     null: false
+    t.string  "position", null: false
+    t.integer "type_id",  null: false
+  end
+
+  create_table "quantity_values", force: true do |t|
+    t.decimal "amount",  null: false
+    t.integer "unit_id", null: false
   end
 
 end

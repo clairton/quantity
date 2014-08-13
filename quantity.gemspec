@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Quantity::VERSION
   s.authors     = ["Clairton Rodrigo Heinzen"]
   s.email       = ["clairton.rodrigo@gmail.com"]
-  s.homepage    = "http://github.com.br"
+  s.homepage    = "http://github.com.br/clairton"
   s.summary     = "Quantity Pattern"
   s.description = "Quantity Pattern implementation for active record"
   s.license     = "MIT"
