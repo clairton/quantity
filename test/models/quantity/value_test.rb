@@ -38,5 +38,11 @@ module Quantity
         mt = km.as(quantity_units(:mn))
       end
     end
+
+    test 'call as with self unit' do
+      unit = quantity_units(:hr)
+      value = Value.new(amount: 1.0, unit: unit)
+      assert_equal value, value.as(unit)
+    end
   end
 end

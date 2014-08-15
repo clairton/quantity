@@ -6,6 +6,9 @@ module Quantity
     validates :unit, presence: true
 
     def as(unit)
+      if self.unit == unit
+        return self
+      end
       ratio = Ratio.for(self.unit, unit)
       amount = ratio.to(self.amount)
       Value.new(unit: unit, amount: amount)
