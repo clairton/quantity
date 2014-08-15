@@ -8,6 +8,11 @@ mt_to_km:
   destiny: km
   formula: x / 1000
 
+km_to_mt:
+  origin: km
+  destiny: mt
+  formula: x * 1000
+
 km_to_mi:
   origin: km
   destiny: mi

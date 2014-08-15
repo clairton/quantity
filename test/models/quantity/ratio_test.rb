@@ -46,9 +46,10 @@ module Quantity
       assert !ratio.nil?
     end
 
-    test 'for try again' do
-      ratio = Ratio.for(quantity_units(:mi), quantity_units(:km), true)
-      assert !ratio.nil?
+    test 'call for when ratio not found' do
+      assert_raise ActiveRecord::RecordNotFound do
+        Ratio.for(quantity_units(:hr), quantity_units(:mn))
+      end
     end
   end
 end

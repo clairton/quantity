@@ -11,10 +11,11 @@ module Quantity
       eval formula
     end
 
-    def self.for(origin, destiny, try_again = false)
+    def self.for(origin, destiny)
       ratio = find_by(origin: origin, destiny: destiny)
-      if ratio.nil? && try_again
-        ratio = find_by(origin: destiny, destiny: origin)
+      if ratio.nil?
+        message = "Ratio not found for origin: '#{origin}' and destiny: '#{destiny}'"
+        raise ActiveRecord::RecordNotFound, message
       end
       ratio
     end
