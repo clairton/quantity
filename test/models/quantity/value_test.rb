@@ -24,5 +24,19 @@ module Quantity
       value = Value.new(amount: 1.0, unit: quantity_units(:km))
       assert value.valid?
     end
+
+    test 'as' do
+      km = Value.new(amount: 1.0, unit: quantity_units(:km))
+      mt = km.as(quantity_units(:mt))
+      assert_equal 1000, mt.amount
+      assert_equal 'mt', mt.unit.symbol
+    end
+
+    test 'call as when ratio not found' do
+      assert_raise ActiveRecord::RecordNotFound do
+        km = Value.new(amount: 1.0, unit: quantity_units(:hr))
+        mt = km.as(quantity_units(:mn))
+      end
+    end
   end
 end
