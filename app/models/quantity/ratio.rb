@@ -4,8 +4,8 @@ module Quantity
     belongs_to :destiny, class: Unit, inverse_of: :destinies
 
     validates :formula, :destiny, :origin, :enable, presence: true
-
     validate :formulable
+    validates_with RatioSameUnitType
 
     def to(x)
       eval formula
