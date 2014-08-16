@@ -8,5 +8,6 @@ class CreateQuantityRatios < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :quantity_ratios, [:origin_id, :destiny_id], unique: true
   end
 end

@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20140802134439) do
     t.datetime "updated_at"
   end
 
+  add_index "quantity_ratios", ["origin_id", "destiny_id"], name: "index_quantity_ratios_on_origin_id_and_destiny_id", unique: true
+
   create_table "quantity_types", force: true do |t|
     t.string "name", null: false
   end
