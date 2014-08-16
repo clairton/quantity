@@ -6,6 +6,7 @@ module Quantity
     validates :formula, :destiny, :origin, :enable, presence: true
     validate :formulable
     validates_with RatioSameUnitType
+    validates_with RatioSameUnit
 
     def to(x)
       eval formula
