@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+ruby '2.1.2'
+
 # Declare your gem's dependencies in quantity.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
 # development dependencies will be added by default to the :development group.
@@ -10,5 +12,11 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-# To use debugger
-gem 'debugger'
+#create observers
+gem 'rails-observers'
+
+#to use create_view
+gem 'schema_plus'
+
+#to enums
+gem 'enumerize'

@@ -28,7 +28,8 @@ module Quantity
     end
 
     test 'inclusion in position' do
-      unit = Unit.new(name: 'Milisegundos', symbol: 'Mn', type: Type.first, position: :between)
+      unit = Unit.new(name: 'Milisegundos', symbol: 'Mn', type: Type.first)
+      unit.position = :between
       assert unit.invalid?
       assert unit.errors.has_key? :position
     end

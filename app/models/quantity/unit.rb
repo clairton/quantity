@@ -1,13 +1,16 @@
 module Quantity
   class Unit < ActiveRecord::Base
+    extend Enumerize
+    enumerize :position, in: [:after, :before]
+
     belongs_to :type, validate: true, inverse_of: :units
     has_many :values, inverse_of: :unit
     has_many :origins, inverse_of: :origin, class: Ratio
     has_many :destinies, inverse_of: :destiny, class: Ratio
 
     validates :name, :symbol, presence: true, uniqueness: true
-    validates :type, presence: true
-    validates :position, inclusion: {in: [:after, :before]}, presence: true
+    validates :type, :position, presence: true
+    validates :position, inclusion: {in: Unit.position.values}
 
     after_initialize :default_values
 
