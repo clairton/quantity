@@ -21,7 +21,13 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'enumerize'
 
+  s.add_dependency 'rails-observers'
+
   s.add_development_dependency 'sqlite3'
 
   s.add_development_dependency 'pry-byebug'
+
+  s.add_development_dependency 'rails_admin', '>= 0.6.2'
+
+  s.add_development_dependency 'sass-rails', '>= 4.0.2'
 end

@@ -1,4 +1,3 @@
 Rails.application.routes.draw do
-
-  mount Quantity::Engine => "/quantity"
+  mount RailsAdmin::Engine => '/admin', as: :rails_admin
 end
