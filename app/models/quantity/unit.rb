@@ -1,6 +1,6 @@
 module Quantity
   class Unit < ActiveRecord::Base
-    extend Enumerize
+    extend ::Enumerize
     enumerize :position, in: [:after, :before]
 
     belongs_to :type, validate: true, inverse_of: :units
