@@ -24,6 +24,6 @@ real_to_dolar:
   formula: x / 2.89
 
 celsius_to_fahrenheit:
-  origin: celcius
+  origin: celsius
   destiny: fahrenheit
   formula: (x * 1.8) + 32

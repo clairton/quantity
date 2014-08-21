@@ -1,7 +1,7 @@
 module Quantity
   class Ratio < ActiveRecord::Base
-    belongs_to :origin, class_name: 'Unit', inverse_of: :origins
-    belongs_to :destiny, class_name: 'Unit', inverse_of: :destinies
+    belongs_to :origin, class_name: 'Unit', inverse_of: :origins, foreign_key: 'origin_id'
+    belongs_to :destiny, class_name: 'Unit', inverse_of: :destinies, foreign_key: 'destiny_id'
 
     validates :formula, :destiny, :origin, :enable, presence: true
     validate :formulable

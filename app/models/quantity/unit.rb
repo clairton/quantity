@@ -7,8 +7,8 @@ module Quantity
 
     belongs_to :type, validate: true, inverse_of: :units
     has_many :values, inverse_of: :unit
-    has_many :origins, inverse_of: :origin, class_name: 'Ratio'
-    has_many :destinies, inverse_of: :destiny, class_name: 'Ratio'
+    has_many :origins, inverse_of: :origin, class_name: 'Ratio', foreign_key: 'origin_id'
+    has_many :destinies, inverse_of: :destiny, class_name: 'Ratio', foreign_key: 'destiny_id'
 
     validates :name, :symbol, presence: true, uniqueness: true
     validates :type, :position, presence: true
