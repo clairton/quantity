@@ -12,6 +12,10 @@ module Quantity
       eval formula
     end
 
+    def to_s
+      "#{try :origin} -> #{try :destiny}"
+    end
+
     def self.for(origin, destiny)
       ratio = find_by(origin: origin, destiny: destiny)
       if ratio.nil?

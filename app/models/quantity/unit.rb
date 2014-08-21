@@ -5,6 +5,7 @@ module Quantity
     extend Enumerize
     enumerize :position, in: [:after, :before]
 
+
     belongs_to :type, validate: true, inverse_of: :units
     has_many :values, inverse_of: :unit
     has_many :origins, inverse_of: :origin, class_name: 'Ratio', foreign_key: 'origin_id'
@@ -15,6 +16,19 @@ module Quantity
     validates :position, inclusion: {in: Unit.position.values}
 
     after_initialize :default_values
+
+    @@formats = {
+      after: Proc.new {|amount, symbol|
+        "#{amount} #{symbol}"
+      },
+      before: Proc.new {|amount, symbol|
+        "#{symbol} #{amount}"
+      }
+    }
+
+    def format(value)
+      @@formats[position.to_sym].call(value, symbol)
+    end
 
     def to_s
       try :symbol

@@ -54,5 +54,13 @@ module Quantity
     test 'to_s' do
       assert_equal 'km', quantity_units(:km).to_s
     end
+
+    test 'format after' do
+      assert_equal '6 km', quantity_units(:km).format(6)
+    end
+
+    test 'format before' do
+      assert_equal 'R$ 6', quantity_units(:real).format(6)
+    end
   end
 end

@@ -41,6 +41,11 @@ module Quantity
       assert_equal 0.621371192237334, ratio.to(1)
     end
 
+    test 'to string' do
+      ratio = quantity_ratios(:km_to_mi)
+      assert_equal 'km -> mi', ratio.to_s
+    end
+
     test 'for' do
       ratio = Ratio.for(quantity_units(:km), quantity_units(:mi))
       assert !ratio.nil?

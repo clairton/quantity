@@ -13,5 +13,9 @@ module Quantity
       amount = ratio.to(self.amount)
       Value.new(unit: unit, amount: amount)
     end
+
+    def to_s
+      unit.format(amount)
+    end
   end
 end

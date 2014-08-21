@@ -25,6 +25,11 @@ module Quantity
       assert value.valid?
     end
 
+    test 'to_s' do
+      value = Value.new(amount: 1.0, unit: quantity_units(:km))
+      assert_equal '1.0 km', value.to_s
+    end
+
     test 'as' do
       km = Value.new(amount: 1.0, unit: quantity_units(:km))
       mt = km.as(quantity_units(:mt))
