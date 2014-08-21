@@ -1,5 +1,7 @@
 RailsAdmin.config do |config|
 
+  config.label_methods << :to_s
+
   ### Popular gems integration
 
   ## == Devise ==

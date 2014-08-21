@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'enumerize'
 
-  s.add_dependency 'rails-observers'
+  s.add_dependency 'schema_plus'
 
   s.add_development_dependency 'sqlite3'
 
