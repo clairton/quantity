@@ -17,6 +17,8 @@ module Quantity
 
     after_initialize :default_values
 
+    scope :by_symbol, ->(symbol){where(symbol: symbol)}
+
     @@formats = {
       after: Proc.new {|amount, symbol|
         "#{amount} #{symbol}"
@@ -32,6 +34,10 @@ module Quantity
 
     def to_s
       try :symbol
+    end
+
+    def self.parse(string)
+      by_symbol(string).first
     end
 
     private

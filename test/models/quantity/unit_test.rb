@@ -62,5 +62,9 @@ module Quantity
     test 'format before' do
       assert_equal 'R$ 6', quantity_units(:real).format(6)
     end
+
+    test 'parse' do
+      assert_equal 'Real', Unit.parse('R$').name
+    end
   end
 end
