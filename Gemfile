@@ -14,4 +14,5 @@ gemspec
 group :development, :test do
   gem 'rails_admin'
   gem "sass-rails", "~> 4.0.2"
+  gem "pry-byebug"
 end
