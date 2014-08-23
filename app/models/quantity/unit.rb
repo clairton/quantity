@@ -40,6 +40,12 @@ module Quantity
       by_symbol(string).first
     end
 
+    def to_regex(options = {})
+      options[:before] ||= ''
+      options[:after] ||= ''
+      /#{options[:before]}#{Regexp.quote(symbol)}#{options[:after]}/
+    end
+
     private
     def default_values
       self.position ||= :after

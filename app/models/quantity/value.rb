@@ -17,5 +17,17 @@ module Quantity
     def to_s
       unit.format(amount)
     end
+
+    def self.parse(string)
+      Unit.all.each do |unit|
+        regexs = [unit.to_regex(before: '^'), unit.to_regex(after: '$')]
+        regexs.each do |regex|
+          if string =~ regex
+            amount = string.sub(regex, '').strip
+            return Value.new(amount: amount, unit: unit)
+          end
+        end
+      end
+    end
   end
 end

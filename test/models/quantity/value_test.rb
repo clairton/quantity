@@ -49,5 +49,17 @@ module Quantity
       value = Value.new(amount: 1.0, unit: unit)
       assert_equal value, value.as(unit)
     end
+
+    test 'parse reais' do
+      value = Value.parse('R$ 1.01')
+      assert_equal 1.01, value.amount
+      assert_equal 'R$', value.unit.symbol
+    end
+
+    test 'parse duzia' do
+      value = Value.parse('6 dz')
+      assert_equal 6, value.amount
+      assert_equal 'dz', value.unit.symbol
+    end
   end
 end
