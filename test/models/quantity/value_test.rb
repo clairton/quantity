@@ -52,14 +52,20 @@ module Quantity
 
     test 'parse reais' do
       value = Value.parse('R$ 1.01')
-      assert_equal 1.01, value.amount
-      assert_equal 'R$', value.unit.symbol
+      assert_equal 1.01, value['amount']
+      assert_equal 'R$', value['unit']['symbol']
     end
 
     test 'parse duzia' do
       value = Value.parse('6 dz')
-      assert_equal 6, value.amount
-      assert_equal 'dz', value.unit.symbol
+      assert_equal 6, value['amount']
+      assert_equal 'dz', value['unit']['symbol']
     end
+
+    # test 'create from parseable string' do
+    #   value = Value.create('6 dz')
+    #   assert_equal 6, value['amount']
+    #   assert_equal 'dz', value['unit']['symbol']
+    # end
   end
 end
