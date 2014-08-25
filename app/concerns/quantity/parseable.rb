@@ -2,26 +2,27 @@ module Quantity
   module Parseable
     extend ActiveSupport::Concern
 
-    def initialize(attributes)
-      if attributes.is_a?(String)
-        attributes = parse(attributes)
-      end
-      super(attributes)
-    end
-
     def update(attributes)
       if attributes.is_a?(String)
         attributes = parse(attributes)
       end
-      super(attributes)
+      super
     end
 
     module ClassMethods
+      def new(*args, &block)
+        if args.first.is_a?(String)
+          super(parse(args.first), &block)
+        else
+          super
+        end
+      end
+
       def create(attributes = nil, &block)
         if attributes.is_a?(String)
           attributes = parse(attributes)
         end
-        super(attributes, &block)
+        super
       end
 
       def parse(string)

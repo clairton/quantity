@@ -64,8 +64,14 @@ module Quantity
 
     test 'create from parseable string' do
       value = Value.create('10 un')
-      assert_equal 10, value['amount']
-      assert_equal 'un', Unit.find(value['unit_id']).symbol
+      assert_equal 10, value.amount
+      assert_equal 'un', Unit.find(value.unit_id).symbol
+    end
+
+    test 'new from parseable string' do
+      value = Value.new('100 mt')
+      assert_equal 100, value.amount
+      assert_equal 'mt', Unit.find(value.unit_id).symbol
     end
 
     test 'create from not exist unit' do
