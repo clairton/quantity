@@ -7,7 +7,6 @@ module Quantity
     test 'same unit' do
       lt = quantity_units(:lt)
       ratio = Ratio.new(origin: lt, destiny: lt, formula: 'x')
-      debugger
       assert ratio.invalid?
       assert ratio.errors.has_key? :destiny
       assert ratio.errors.has_key? :origin

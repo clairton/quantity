@@ -24,7 +24,7 @@ module Quantity
     end
 
     def to_s
-      unit.format(amount)
+      unit.format(amount) unless unit.nil?
     end
 
     def self.parse(string)
@@ -33,12 +33,12 @@ module Quantity
         regexs.each do |regex|
           if string =~ regex
             amount = string.sub(regex, '').strip
-            hash = Value.new(amount: amount, unit: unit).attributes
-            hash['unit'] = unit.attributes
-            return hash
+            return Value.new(amount: amount, unit: unit).attributes
           end
         end
       end
+      message = "Unparseable string #{string}, does it unit exist?"
+      raise ActiveRecord::RecordNotFound.new(message)
     end
   end
 end
